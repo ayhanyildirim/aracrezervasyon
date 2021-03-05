@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SaveImages</title>
+    <link href="~/css/stilim.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h2>Araç Resim Ekle</h2>
+        @using (Html.BeginForm("SaveImages", "AracTabloesYonet1", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.Hidden("hiddenId",Url.RequestContext.RouteData.Values["id"])
+            <p>
+                @Html.TextBox("UploadedImage","", new { type = "File"})
+            </p>
+            <p>
+                <input type="submit" value="Yükle" />
+            </p>
+        }
+        @{ 
+            if (ViewBag.Message != null)
+            {
+                var dir = "~/Images/" + Url.RequestContext.RouteData.Values["id"] + ".jpg";
+                @ViewBag.Message
+                <p>
+                    <img src="@Url.Content(dir)" width="200" />
+                </p>
+            }
+        }
+        <p>@Html.ActionLink("Araç Listesi","Index")</p>
+    </div>
+</body>
+</html>

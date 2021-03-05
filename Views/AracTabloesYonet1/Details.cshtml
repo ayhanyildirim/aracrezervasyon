@@ -1,0 +1,75 @@
+﻿@model randevu.Models.Arac_tbl
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/css/stilim.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h4>AracTablo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Marka)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Marka)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Model)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Model)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ModelYili)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ModelYili)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Yakit)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Yakit)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Vites)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Vites)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Fiyat)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.AracId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

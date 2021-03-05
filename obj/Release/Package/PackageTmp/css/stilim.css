@@ -1,0 +1,35 @@
+﻿body {
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:14px;
+    color:#333;
+    background-color:#eee;
+}
+a:link,a:visited{
+    color:#0000cc;
+    text-decoration:underline;
+
+}
+a:hover{
+        color:crimson;
+        text-decoration:none;
+}
+
+a.btn-primary.btn-lg 
+{
+    text-decoration: none;
+}
+
+a.nav-link {
+    text-decoration: none;
+}
+
+a.navbar-brand {
+    text-decoration: none;
+}
+
+a.btn.btn-primary {
+    text-decoration: none;
+}
+
+header.jumbotron.my-4 {
+}

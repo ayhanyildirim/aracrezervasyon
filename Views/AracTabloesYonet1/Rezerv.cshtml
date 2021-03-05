@@ -1,0 +1,69 @@
+﻿@model IEnumerable<randevu.Models.Rezervasyon_tbl>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+</head>
+<body>
+
+    <table class="table" border="1" cellpadding="3" cellspacing="3" width="600">
+        <tr>
+            <th>RESİM</th>
+            <th>Rezerv Id</th>
+            <th>TC KİMLİK</th>
+            <th>AD SOYAD</th>
+            <th>ALIM TARİHİ</th>
+            <th>TESLİM TARİHİ</th>
+            <th>ÜCRET</th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{
+                        var dir = "~/Images/" + item.AracId + ".jpg";
+                        <img src="@Url.Content(dir)" width="200" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RezervasyonId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TcKimlik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdSoyad)
+                </td>
+
+                <td>
+                 @Convert.ToString(string.Format("{0:dd/MM/yyyy}",item.AlmaTarihi))
+                </td>
+                <td>
+                    @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.TeslimTarihi))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ucret)₺
+                </td>
+
+                <td>
+                  
+                    @Html.ActionLink("Detay", "Details", new { id = item.AracId })
+                  
+                </td>
+            </tr>
+        }
+        <ul class="nav navbar-nav">
+            <li><a href="/Security/Logout">Çıkış Yap</a></li>
+        </ul>
+    </table>
+</body>
+</html>

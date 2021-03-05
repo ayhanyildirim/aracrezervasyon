@@ -1,0 +1,88 @@
+﻿@model IEnumerable<randevu.Models.Arac_tbl>
+
+@{
+    Layout = null;
+} 
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/stilim.css" rel="stylesheet" />
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Yeni Oluştur", "Create")
+        @Html.ActionLink("Rezervasyonlar", "Rezerv")
+
+
+    </p>
+    <table class="table" border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>.</th>
+            <th>
+                MARKA
+            </th>
+            <th>
+                MODEL
+            </th>
+            <th>
+                MODEL YILI
+            </th>
+            <th>
+                YAKIT
+            </th>
+            <th>
+                VİTES
+            </th>
+            <th>
+                FİYAT
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{
+                        var dir = "~/Images/" + item.AracId + ".jpg";
+                        <img src="@Url.Content(dir)" width="200" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marka)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModelYili)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yakit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vites)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fiyat)
+                </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.AracId }) |
+                    @Html.ActionLink("Detay", "Details", new { id = item.AracId }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.AracId })
+                    @Html.ActionLink("Resim Yükle", "SaveImages", new { id = item.AracId })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <ul class="nav navbar-nav">
+        <li><a href="/Security/Logout">Çıkış Yap</a></li>
+    </ul>
+   
+</body>
+</html>

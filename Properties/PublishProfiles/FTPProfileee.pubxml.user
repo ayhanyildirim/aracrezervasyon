@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO6mHlM4YiEKWKcfJIV+UxQAAAAACAAAAAAAQZgAAAAEAACAAAAAHhjQGPkyuRPvztBs1adeLtbILFKm97uYjf7zq7H93eAAAAAAOgAAAAAIAACAAAAAcfdEIojvdTWeId41+EDB9kBx62GMzQsJHE/+zA3prszAAAABqoueCvjC1zEm6eq/nINsXuxDja8P+kq0AqdQ3b55GRc/3mGDkQd1V1xOZ5xXssHRAAAAAn55Syv2/SbVlzIDWdSiIVIHvl5E6oKqOh+/tuU5WzxfotZLSB75frNKb0gy4D3Pu5W7Z68UIxWzM6TgigAcBag==</EncryptedPassword>
+    <_PublishTargetUrl>ftp://94.73.150.148/http://yasarln.site/httpdocs/Views/AracTabloes/Details.cshtml</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

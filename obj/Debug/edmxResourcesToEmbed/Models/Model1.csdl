@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AracımızModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Arac_tbl">
+    <Key>
+      <PropertyRef Name="AracId" />
+    </Key>
+    <Property Name="AracId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModelYili" Type="Int16" />
+    <Property Name="Yakit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vites" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fiyat" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Musteri_tbl">
+    <Key>
+      <PropertyRef Name="TcKimlik" />
+    </Key>
+    <Property Name="TcKimlik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+    <Property Name="Cinsiyet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Rezervasyon_tbl">
+    <Key>
+      <PropertyRef Name="RezervasyonId" />
+    </Key>
+    <Property Name="RezervasyonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AracId" Type="Int32" />
+    <Property Name="TcKimlik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AlmaTarihi" Type="DateTime" Precision="0" />
+    <Property Name="TeslimTarihi" Type="DateTime" Precision="0" />
+    <Property Name="Ucret" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityContainer Name="AracımızEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Arac_tbl" EntityType="Self.Arac_tbl" />
+    <EntitySet Name="Musteri_tbl" EntityType="Self.Musteri_tbl" />
+    <EntitySet Name="Rezervasyon_tbl" EntityType="Self.Rezervasyon_tbl" />
+    <EntitySet Name="Kullanici" EntityType="AracımızModel.Kullanici" />
+  </EntityContainer>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

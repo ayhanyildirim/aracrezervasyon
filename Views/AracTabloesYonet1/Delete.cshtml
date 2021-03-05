@@ -1,0 +1,66 @@
+﻿@model randevu.Models.Arac_tbl
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <link href="~/css/stilim.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Silmek İstediğinizden Eminmisiniz?</h3>
+    <div>
+
+        <h4>AracTablo</h4>
+        <hr />
+        @{ 
+            var dir = "~/AracImages/" + Model.AracId + ".jpg";
+            <img src="@Url.Content(dir)" width="300" />
+        }
+        <table border="1" cellpadding="5" cellspacing="0" width="500">
+            <tr>
+                <td>Marka</td>
+                <td> @Html.DisplayFor(model => model.Marka)</td>
+            </tr>
+            <tr>
+                <td>Model</td>
+                <td> @Html.DisplayFor(model => model.Model)</td>
+            </tr>
+            <tr>
+                <td>Model Yılı</td>
+                <td>@Html.DisplayFor(model => model.ModelYili)</td>
+            </tr>
+            <tr>
+                <td>Yakıt</td>
+                <td> @Html.DisplayFor(model => model.Yakit)</td>
+            </tr>
+            <tr>
+                <td>Vites</td>
+                <td> @Html.DisplayFor(model => model.Vites)</td>
+            </tr>
+            <tr>
+                <td>Fiyat</td>
+                <td> @Html.DisplayFor(model => model.Fiyat)</td>
+            </tr>
+            <td></td>
+            <td>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Sil" class="btn btn-default" /> |
+                        @Html.ActionLink("Araç Listesi", "Index")
+                    </div>
+                }
+            </td>
+        </table>
+       
+    </div>
+</body>
+</html>
